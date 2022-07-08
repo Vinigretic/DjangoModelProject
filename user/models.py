@@ -46,5 +46,42 @@ class Person(models.Model):
 # print('name:', object1.name)
 # print('age:', object1.age)
 
-object2 = Person(name='Dima', age=4)
-object2.save()
+# object2 = Person(name='Dima', age=4)
+# object2.save()
+
+# object3 = Person.objects.get(name='Loka')
+# print(object3.name)
+
+# vika, created = Person.objects.get_or_create(name='Vika', age=15)
+# print(vika.name)
+# print(vika.age)
+
+# people = Person.objects.all()
+# print(people)
+
+# people = Person.objects.filter(name='Lika')
+# print(people)
+
+# object1 = Person(name='Lika', age=8)
+# object1.save()
+
+# people = Person.objects.filter(name='Lika')
+# print(people)
+
+# people = Person.objects.filter(name='Lika', age=10)
+# print(people)
+
+# people = Person.objects.exclude(age=10)
+# print(people)
+
+# people = Person.objects.filter(name='Lika').exclude(age=10)
+# print(people)
+
+# people = Person.objects.in_bulk()
+# print(people)
+# for id in people:
+#     print(people[id].name)
+#     print(people[id].age)
+
+# people2 = Person.objects.in_bulk([1, 3, 6])
+# print(people2)
