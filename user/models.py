@@ -40,6 +40,9 @@ class Person(models.Model):
     name = models.CharField(max_length=20)
     age = models.PositiveSmallIntegerField()
 
+    # def __str__(self):
+    #     return f'name:{self.name}, age:{self.age}'
+
 
 # object1 = Person.objects.create(name='Lika', age=10)
 # print('id:', object1.id)
@@ -49,8 +52,9 @@ class Person(models.Model):
 # object2 = Person(name='Dima', age=4)
 # object2.save()
 
-# object3 = Person.objects.get(name='Loka')
+# object3 = Person.objects.get(name='Dima', age=4)
 # print(object3.name)
+# print(object3.age)
 
 # vika, created = Person.objects.get_or_create(name='Vika', age=15)
 # print(vika.name)
@@ -85,3 +89,36 @@ class Person(models.Model):
 
 # people2 = Person.objects.in_bulk([1, 3, 6])
 # print(people2)
+
+# new_user = Person.objects.create(name='Nata', age=20)
+# new_user1 = Person(name='Slava', age=30)
+# new_user1.save()
+# print(Person.objects.all())
+# users = Person.objects.all()
+# for i in users:
+#     print(i)
+#     print(i.name, i.age)
+# a = []
+# for i in users:
+#     a.append((i.name, i.age))
+# print(a)
+
+
+
+# ДЗ
+# 1) Витягнути всіх юзерів з іменем Діма з таблиці.
+
+# users = Person.objects.filter(name='Dima')
+# print(users)
+
+# 2) Витягнути юзерів в яких вік = 15 а ім'я = Віка
+
+# users = Person.objects.filter(name='Vika', age=15)
+# print(users)
+
+# 3) Витягнути 2,3,6 id з таблиці, та вивести їх імена.
+
+# users = Person.objects.in_bulk([2, 3, 6])
+# for i in users:
+#     print(users[i].name)
+

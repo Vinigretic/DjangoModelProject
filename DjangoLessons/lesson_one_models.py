@@ -11,7 +11,7 @@
 # python manage.py makemigrate
 # После описания каждой новой модели или изменения модели необходимо делать миграции
 # 1. python manage.py makemigrations
-# 2. python manage.py makemigrate
+# 2. python manage.py migrate
 
 # Заходим в файл models.py(имеет каждое приложение).
 # Создаем первую модель
