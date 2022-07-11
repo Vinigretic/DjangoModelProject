@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import F
+
 
 # class Person(models.Model):
 #     name = models.CharField(max_length=20)
@@ -121,4 +123,37 @@ class Person(models.Model):
 # users = Person.objects.in_bulk([2, 3, 6])
 # for i in users:
 #     print(users[i].name)
+
+# object1 = Person.objects.get(id=1)
+# print(object1.name)
+
+# object1.name = 'Lola'
+# object1.save()
+
+# object1.name = 'Andrey'
+# object1.save(update_fields=['name'])
+
+# Person.objects.filter(id=2).update(age=18)
+
+# Person.objects.filter(id=2).update(age = F('age') + 2)
+# Person.objects.all().update(age = F('age') + 10)
+# Person.objects.all().update(name = 'Cat')
+
+# object1 = Person.objects.get(id=2)
+# object1.name = 'Lika'
+# object1.save()
+
+# Person.objects.filter(id=3).update(name = 'Andrey')
+# Person.objects.filter(id=4).update(name = 'Dima')
+
+# values_for_update = {'name': 'Max', 'age': 45}
+# value_for_update = {'id': '10'}
+# object1, created = Person.objects.update_or_create(id=20, defaults=values_for_update)
+# object1, created = Person.objects.update_or_create(id=20, defaults=value_for_update)
+
+# object1 = Person.objects.get(id=20)
+# object1.id = 21
+# object1.save()
+
+
 
