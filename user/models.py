@@ -156,4 +156,29 @@ class Person(models.Model):
 # object1.save()
 
 
+# 1) Витягнути з бд поля в яких вік = 30
 
+# field = Person.objects.filter(age=30)
+# print(field)
+# 2) Замінити в id = 5 ім'я на Василь
+# Person.objects.filter(id=5).update(name='Vasiliy')
+
+# 3) Реалізувати для 22-id update or create данних.
+# user = {'name': 'Ivan', 'age': 40}
+# Person.objects.update_or_create(id=6, defaults=user)
+
+# object = Person.objects.get(id=1)
+# object.name = 'Lara'
+# object.age = 35
+# object.save()
+#
+# object = Person.objects.get(id=7)
+# object.name = 'Pavel'
+# object.save(update_fields=['name'])
+#
+# Person.objects.filter(id=10).update(name='Sveta')
+
+# Person.objects.all().update(age = F('age') + 1)
+
+# a = {'name': 'Yulia', 'age': 1}
+# Person.objects.update_or_create(id=1, defaults=a)
