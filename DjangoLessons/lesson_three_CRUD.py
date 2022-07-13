@@ -157,3 +157,13 @@ from django.db.models import F
 # False, если нет будет создано новое поле с новыми параметрами  и в переменую created сохранится значение True
 
 
+# Операция delete
+
+# Car.objects.filter(id=2).delete()
+
+# Просмотр строки запроса
+
+# Что бы посмотреть как выглядет SQl запрос необходимо сделать следующее
+#
+# car = Car.objects.filter(model='Kia')
+# print(car.query)

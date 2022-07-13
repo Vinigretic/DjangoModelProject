@@ -38,9 +38,15 @@ from django.db.models import F
 #     field22 = models.SlugField()
 #     field23 = models.URLField()
 
-class Person(models.Model):
-    name = models.CharField(max_length=20)
-    age = models.PositiveSmallIntegerField()
+# class Person(models.Model):
+#     name = models.CharField(max_length=20)
+#     age = models.PositiveSmallIntegerField()
+
+class Car(models.Model):
+    model = models.CharField(max_length=20)
+    color = models.CharField(max_length=50)
+
+
 
     # def __str__(self):
     #     return f'name:{self.name}, age:{self.age}'
@@ -182,3 +188,16 @@ class Person(models.Model):
 
 # a = {'name': 'Yulia', 'age': 1}
 # Person.objects.update_or_create(id=1, defaults=a)
+# #
+# object1 = Person.objects.filter(id=2)
+# object1.delete()
+
+
+# object1 = Car.objects.create(model='Kia', color='red')
+# object2 = Car.objects.create(model='Mazda', color=
+
+# Car.objects.filter(pk=2).delete()
+
+car = Car.objects.filter(model='Kia')
+print(car.query)
+
