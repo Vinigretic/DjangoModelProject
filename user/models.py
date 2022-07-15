@@ -42,9 +42,9 @@ from django.db.models import F
 #     name = models.CharField(max_length=20)
 #     age = models.PositiveSmallIntegerField()
 
-# class Car(models.Model):
-#     model = models.CharField(max_length=20)
-#     color = models.CharField(max_length=50)
+class Car(models.Model):
+    model = models.CharField(max_length=20)
+    color = models.CharField(max_length=50)
 
 
 
@@ -197,6 +197,8 @@ from django.db.models import F
 # object2 = Car.objects.create(model='Mazda', color=
 
 # Car.objects.filter(pk=2).delete()
+# object = Car.objects.all()
+# object.delete()
 
 # car = Car.objects.filter(model='Kia')
 # print(car.query)

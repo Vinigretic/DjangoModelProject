@@ -49,8 +49,8 @@ from .models import Person
 #     <title>Title</title>
 # </head>
 # <body class="container">
-#     <form method="POST" action="create/">
-#         {% csrf_token %}
+#     <form method="POST" action="create/"> action="create/" - привязка действия к HTML файлу, ссылка указывает на
+#         {% csrf_token %}                                     url, а дальше на view
 #         <p>
 #             <label>Input name</label> <br>  тег label подпись поля формы, тег <br> перевод на новую строку
 #             <input type="text" name="name"/>
