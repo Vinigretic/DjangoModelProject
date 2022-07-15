@@ -159,7 +159,28 @@ from django.db.models import F
 
 # Операция delete
 
-# Car.objects.filter(id=2).delete()
+
+# Для того что бы удалить обьект из БД :
+# Способ 1
+#
+# object = Car.objects.get(id = 25)
+# object.delete()
+#
+# Методом get забираем данные в обьект и удаляем его
+#
+# Способ 2
+#
+# object = Car.objects.filter(model = 'Kia')
+# object.delete()
+#
+# Методом filter фильтруем по нужному полю и тоже удаляем
+#
+# Способ 3
+#
+# object = Car.objects.all()
+# object.delete()
+#
+# Забираем в обьект всю БД и удаляем
 
 # Просмотр строки запроса
 
