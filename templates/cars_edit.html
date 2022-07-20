@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars edit</title>
+</head>
+<body class="container">
+    <form method="POST">
+         {% csrf_token %}
+        <p>
+            <label>Input Car model</label> <br>
+            <input type="text" name="brand" value="{{ object_update.brand }}">
+        </p>
+        <p>
+            <label>Input Age</label> <br>
+            <input type="number" name="age" value="{{ object_update.age }}">
+        </p>
+        <p>
+            <label>Input Color</label> <br>
+            <input type="text" name="color" value="{{ object_update.color }}">
+        </p>
+        <input type="submit" value="save">
+
+    </form>
+<!--    <form method="POST">-->
+<!--        {% csrf_token %}-->
+<!--        <p>-->
+<!--            <label>Input car</label> <br>-->
+<!--            <input type="text" name="brand" value="{{cars1.brand}}">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label>Input car age</label> <br>-->
+<!--            <input type="number" name="car_age" value="{{cars1.car_age}}">-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--            <label>Input color</label> <br>-->
+<!--            <input type="text" name="color" value="{{cars1.color}}">-->
+<!--        </p>-->
+<!--        <input type="submit" value="save">-->
+
+<!--    </form>-->
+
+
+</body>
+</html>

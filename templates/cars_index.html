@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body class="container">
+<!--    <form method="POST" action="create/">-->
+<!--        {% csrf_token %}-->
+<!--        <p>-->
+<!--            <label>Input car</label> <br>-->
+<!--            <input type="text" name="brand">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label>Input car age</label> <br>-->
+<!--            <input type="number" name="car_age">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label>Input color</label> <br>-->
+<!--            <input type="text" name="color">-->
+<!--        </p>-->
+<!--        <input type="submit" value="save">-->
+<!--    </form>-->
+
+<!--    {% if cars.count > 0 %}-->
+<!--    <p>List cars</p>-->
+<!--    {% for car in cars %}-->
+<!--        <ul>-->
+<!--            <li>{{ car.id }}, {{ car.brand }}, {{ car.car_age }}, {{ car.color }}-->
+<!--                <a href="cars/edit/{{ cars1.id }}">Изменить</a> | <a href="car/delete/{{ cars1.id }}">Удалить</a></li>-->
+<!--        </ul>-->
+<!--    {% endfor %}-->
+<!--    {% endif %}-->
+
+    <form method="POST" action="create/object/">
+        {% csrf_token %}
+        <p>
+            <label>Input Car model</label> <br>
+            <input type="text" name="brand">
+        </p>
+        <p>
+            <label>Input Age</label> <br>
+            <input type="number" name="age">
+        </p>
+        <p>
+            <label>Input Color</label> <br>
+            <input type="text" name="color">
+        </p>
+        <input type="submit" value="save">
+    </form>
+    {% if cars %}
+        <p>List cars</p>
+        {% for car in cars %}
+        <p>
+            {{ car.id }}, {{ car.brand }}, {{ car.age }}, {{ car.color }} //
+            <a href="cars/edit/{{ car.id }}">Update</a> //
+            <a href="delete/{{ car.id }}">Delete</a>
+
+        </p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

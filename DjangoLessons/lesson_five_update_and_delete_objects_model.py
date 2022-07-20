@@ -44,13 +44,13 @@
 #     </form>
 
 # Корректируем  index
-# Добавляем код который будет отправлять id во views
-#
+# Добавляем код который будет отправлять id во views,
+#       {% for person1 in people %}-->
 #         <tr>
-#             <td>{{ person.id }}</td>
-#             <td>{{ person.name }}</td>
-#             <td>{{ person.age }}</td>
-#             <td><a href="edit/{{ person.id }}">Изменить</a> | <a href="delete/{{ person.id }}">Удалить</a></td>
+#             <td>{{ person1.id }}</td>
+#             <td>{{ person1.name }}</td>
+#             <td>{{ person1.age }}</td>
+#             <td><a href="edit/{{ person1.id }}">Изменить</a> | <a href="delete/{{ person1.id }}">Удалить</a></td>
 #         </tr>
 
 
@@ -63,3 +63,6 @@
 #     path('delete/<int:id>/', views.delete)
 #
 # ]
+
+# Побудувати таблицю в базі даних cars, з полями brand, car_age, color. Добавити можливість редагування,
+# створення та видалення полів на  UI.

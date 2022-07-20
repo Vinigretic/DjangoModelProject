@@ -1,39 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body class="container">
-    <form method="POST" action="create/">
-        {% csrf_token %}
-        <p>
-            <label>Input name</label> <br>
-            <input type="text" name="name"/>
-        </p>
-        <p>
-            <label>Input age</label> <br>
-            <input type="number" name="age">
-        </p>
-        <input type="submit" value="save">
-    </form>
-    {% if people.count > 0 %}
-    <h2>the List of users</h2>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Age</th>
-        </tr>
-        {% for person in people %}
-        <tr>
-            <td>{{ person.id }}</td>
-            <td>{{ person.name }}</td>
-            <td>{{ person.age }}</td>
-            <td><a href="edit/{{ person.id }}">Изменить</a> | <a href="delete/{{ person.id }}">Удалить</a></td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body class="container">-->
+<!--    <form method="POST" action="create/">-->
+<!--        {% csrf_token %}-->
+<!--        <p>-->
+<!--            <label>Input name</label> <br>-->
+<!--            <input type="text" name="name"/>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label>Input age</label> <br>-->
+<!--            <input type="number" name="age">-->
+<!--        </p>-->
+<!--        <input type="submit" value="save">-->
+<!--    </form>-->
+<!--    {% if people.count > 0 %}-->
+<!--    <h2>the List of users</h2>-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>Id</th>-->
+<!--            <th>Name</th>-->
+<!--            <th>Age</th>-->
+<!--        </tr>-->
+<!--        {% for person1 in people %}-->
+<!--        <tr>-->
+<!--            <td>{{ person1.id }}</td>-->
+<!--            <td>{{ person1.name }}</td>-->
+<!--            <td>{{ person1.age }}</td>-->
+<!--            <td><a href="edit/{{ person1.id }}">Изменить</a> | <a href="delete/{{ person1.id }}">Удалить</a></td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--    </table>-->
+<!--    {% endif %}-->
+<!--</body>-->
+<!--</html>-->
+
+

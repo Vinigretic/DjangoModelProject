@@ -42,9 +42,9 @@ from django.db.models import F
 #     name = models.CharField(max_length=20)
 #     age = models.PositiveSmallIntegerField()
 
-class Car(models.Model):
-    model = models.CharField(max_length=20)
-    color = models.CharField(max_length=50)
+# class Car(models.Model):
+#     model = models.CharField(max_length=20)
+#     color = models.CharField(max_length=50)
 
 
 
@@ -203,6 +203,12 @@ class Car(models.Model):
 # car = Car.objects.filter(model='Kia')
 # print(car.query)
 
-class Person(models.Model):
-    name = models.CharField(max_length=20)
-    age = models.IntegerField()
+# class Person(models.Model):
+#     name = models.CharField(max_length=20)
+#     age = models.IntegerField()
+
+
+class ListCars(models.Model):
+    brand = models.CharField(max_length=20)
+    age = models.SmallIntegerField()
+    color = models.CharField(max_length=20)
