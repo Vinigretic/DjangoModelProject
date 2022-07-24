@@ -1,63 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cars</title>
-</head>
-<body class="container">
-<!--    <form method="POST" action="create/">-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Cars</title>-->
+<!--</head>-->
+<!--<body class="container">-->
+<!--&lt;!&ndash;    <form method="POST" action="create/">&ndash;&gt;-->
+<!--&lt;!&ndash;        {% csrf_token %}&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input car</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" name="brand">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input car age</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="number" name="car_age">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input color</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" name="color">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="submit" value="save">&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    {% if cars.count > 0 %}&ndash;&gt;-->
+<!--&lt;!&ndash;    <p>List cars</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    {% for car in cars %}&ndash;&gt;-->
+<!--&lt;!&ndash;        <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li>{{ car.id }}, {{ car.brand }}, {{ car.car_age }}, {{ car.color }}&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="cars/edit/{{ cars1.id }}">Изменить</a> | <a href="car/delete/{{ cars1.id }}">Удалить</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;    {% endif %}&ndash;&gt;-->
+
+<!--    <form method="POST" action="create/object/">-->
 <!--        {% csrf_token %}-->
 <!--        <p>-->
-<!--            <label>Input car</label> <br>-->
+<!--            <label>Input Car model</label> <br>-->
 <!--            <input type="text" name="brand">-->
 <!--        </p>-->
 <!--        <p>-->
-<!--            <label>Input car age</label> <br>-->
-<!--            <input type="number" name="car_age">-->
+<!--            <label>Input Age</label> <br>-->
+<!--            <input type="number" name="age">-->
 <!--        </p>-->
 <!--        <p>-->
-<!--            <label>Input color</label> <br>-->
+<!--            <label>Input Color</label> <br>-->
 <!--            <input type="text" name="color">-->
 <!--        </p>-->
 <!--        <input type="submit" value="save">-->
 <!--    </form>-->
+<!--    {% if cars %}-->
+<!--        <p>List cars</p>-->
+<!--        {% for car in cars %}-->
+<!--        <p>-->
+<!--            {{ car.id }}, {{ car.brand }}, {{ car.age }}, {{ car.color }} //-->
+<!--            <a href="cars/edit/{{ car.id }}">Update</a> //-->
+<!--            <a href="delete/{{ car.id }}">Delete</a>-->
 
-<!--    {% if cars.count > 0 %}-->
-<!--    <p>List cars</p>-->
-<!--    {% for car in cars %}-->
-<!--        <ul>-->
-<!--            <li>{{ car.id }}, {{ car.brand }}, {{ car.car_age }}, {{ car.color }}-->
-<!--                <a href="cars/edit/{{ cars1.id }}">Изменить</a> | <a href="car/delete/{{ cars1.id }}">Удалить</a></li>-->
-<!--        </ul>-->
-<!--    {% endfor %}-->
+<!--        </p>-->
+<!--        {% endfor %}-->
 <!--    {% endif %}-->
-
-    <form method="POST" action="create/object/">
-        {% csrf_token %}
-        <p>
-            <label>Input Car model</label> <br>
-            <input type="text" name="brand">
-        </p>
-        <p>
-            <label>Input Age</label> <br>
-            <input type="number" name="age">
-        </p>
-        <p>
-            <label>Input Color</label> <br>
-            <input type="text" name="color">
-        </p>
-        <input type="submit" value="save">
-    </form>
-    {% if cars %}
-        <p>List cars</p>
-        {% for car in cars %}
-        <p>
-            {{ car.id }}, {{ car.brand }}, {{ car.age }}, {{ car.color }} //
-            <a href="cars/edit/{{ car.id }}">Update</a> //
-            <a href="delete/{{ car.id }}">Delete</a>
-
-        </p>
-        {% endfor %}
-    {% endif %}
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

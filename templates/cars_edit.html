@@ -1,46 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cars edit</title>
-</head>
-<body class="container">
-    <form method="POST">
-         {% csrf_token %}
-        <p>
-            <label>Input Car model</label> <br>
-            <input type="text" name="brand" value="{{ object_update.brand }}">
-        </p>
-        <p>
-            <label>Input Age</label> <br>
-            <input type="number" name="age" value="{{ object_update.age }}">
-        </p>
-        <p>
-            <label>Input Color</label> <br>
-            <input type="text" name="color" value="{{ object_update.color }}">
-        </p>
-        <input type="submit" value="save">
-
-    </form>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Cars edit</title>-->
+<!--</head>-->
+<!--<body class="container">-->
 <!--    <form method="POST">-->
-<!--        {% csrf_token %}-->
+<!--         {% csrf_token %}-->
 <!--        <p>-->
-<!--            <label>Input car</label> <br>-->
-<!--            <input type="text" name="brand" value="{{cars1.brand}}">-->
+<!--            <label>Input Car model</label> <br>-->
+<!--            <input type="text" name="brand" value="{{ object_update.brand }}">-->
 <!--        </p>-->
 <!--        <p>-->
-<!--            <label>Input car age</label> <br>-->
-<!--            <input type="number" name="car_age" value="{{cars1.car_age}}">-->
+<!--            <label>Input Age</label> <br>-->
+<!--            <input type="number" name="age" value="{{ object_update.age }}">-->
 <!--        </p>-->
-
 <!--        <p>-->
-<!--            <label>Input color</label> <br>-->
-<!--            <input type="text" name="color" value="{{cars1.color}}">-->
+<!--            <label>Input Color</label> <br>-->
+<!--            <input type="text" name="color" value="{{ object_update.color }}">-->
 <!--        </p>-->
 <!--        <input type="submit" value="save">-->
 
 <!--    </form>-->
+<!--&lt;!&ndash;    <form method="POST">&ndash;&gt;-->
+<!--&lt;!&ndash;        {% csrf_token %}&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input car</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" name="brand" value="{{cars1.brand}}">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input car age</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="number" name="car_age" value="{{cars1.car_age}}">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label>Input color</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" name="color" value="{{cars1.color}}">&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="submit" value="save">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
 
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

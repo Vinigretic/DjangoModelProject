@@ -63,6 +63,11 @@
 # <QuerySet [<Person: Person object (1)>, <Person: Person object (2)>, <Person: Person object (3)>, <Person: Person object (4)>, <Person: Person object (5)>, <Person: P
 # erson object (6)>]>
 
+# извлечение данных
+# for i in people:
+#     print(i)
+#     print(i.name, i.age)
+
 # Для того что бы получить определенные данные используем метод filter()
 #
 # people = Person.objects.filter(name='Lika', age=10)

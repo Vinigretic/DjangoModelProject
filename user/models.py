@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import F
+# from cars.models import Dealer  # для связи моделей разных приложений можем импортировать класс другой модели
 
 
 # class Person(models.Model):
@@ -208,7 +209,176 @@ from django.db.models import F
 #     age = models.IntegerField()
 
 
-class ListCars(models.Model):
-    brand = models.CharField(max_length=20)
-    age = models.SmallIntegerField()
-    color = models.CharField(max_length=20)
+# class ListCars(models.Model):
+#     brand = models.CharField(max_length=20)
+#     age = models.SmallIntegerField()
+#     color = models.CharField(max_length=20)
+
+# Связи
+# one to many
+
+# class Company(models.Model):
+#     name_company = models.CharField(max_length=50)
+#     count_persons = models.SmallIntegerField()
+#
+#
+# class Product(models.Model):
+#     company = models.ForeignKey(Company, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=100)
+#     price = models.FloatField()
+
+# object = Product.objects.get(id=2).company.id
+# object = Product.objects.get(id=3).company.name_company
+
+# print(object)
+# Product.objects.get(id=1).company.name_company
+#
+# Product.objects.filter(company__name_company='Apple')
+
+# apple = Company.objects.get(name_company='Apple', count_person=100)
+
+# apple = Company.objects.get(name_company="Apple")
+# print(apple)
+
+# получение всех товаров
+
+# apple = Company.objects.filter(name_company="Apple")
+# apple.product_set.all()
+
+# получение количества товаров
+# apple.product_set.count()
+
+# получение товаров, название которых начинается на "iPhone"
+# apple.product_set.filter(name__startwith="iPhone")
+
+# apple = Company.objects.create(name_company='Apple', count_persons=100)
+# apple.product_set.create(name='Iphone', price=52.3)
+
+# ipad = Product(name='Ipad', price=14.5)
+# apple.product_set.add(ipad, bulk=False)
+
+# ipod = Company.objects.create(name_company='Apple', count_persons=100)
+# ipod.product_set.create(name='Ipod', price=35.6)
+
+# mac = Product(name='Mac', price=120.4)
+# apple.product_set.add(mac, bulk=False)
+
+# sumsung = Company.objects.create(name_company='Sumsung', count_persons=80)
+# galaxy = Product(name='Sumsung Galaxy', price=55.2)
+# sumsung.product_set.add(galaxy, bulk=False)
+
+# many to many
+
+# class Course(models.Model):
+#     courses_name = models.CharField(max_length=200)
+#
+# class Students(models.Model):
+#     student_name = models.CharField(max_length=50)
+#     courses = models.ManyToManyField(Course)
+
+# object1 = Students.objects.create(student_name='Olga')
+# object1.courses.create(courses_name='Maths')
+
+# courses_1 = Students.objects.get(id=5).courses.all()
+# print(courses_1)
+
+# object2 = Course.objects.create(courses_name='Java Script')
+# object2.students_set.create(student_name='Kiril')
+#
+# student_1 = object2.students_set.all()
+# print('все студенты:', student_1)
+#
+# number = object2.students_set.count()
+# print('всего студентов на курсе', number)
+
+# создадим студента
+# object1 = Students.objects.create(student_name='Lika')
+#
+# # создадим один курс и добавим его в список курсов object1
+# object1.courses.create(courses_name="Algebra")
+#
+# # получим все курсы студента
+# courses = Students.objects.get(student_name='Lika').courses.all()
+
+# # получаем всех студентов, которые посещают курс Алгебра
+# pupils = Students.objects.filter(courses__courses_name="Algebra")
+
+# создадим курс
+# ruby = Course.objects.create(courses_name="Ruby")
+
+# # создаем студента и добавляем его на курс
+# ruby.students_set.create(student_name="Bob")
+
+# отдельно создаем студента и добавляем его на курс
+# sam = Students(student_name="Sam")
+# sam.save()
+# ruby.students_set.add(sam)
+#
+# # получим всех студентов курса
+# students = ruby.students_set.all()
+#
+# # получим количество студентов по курсу
+# number = ruby.students_set.count()
+#
+# # удялим с курса одного студента
+# ruby.students_set.remove(sam)
+
+# One to one
+
+# class User(models.Model):
+#     name = models.CharField(max_length=20)
+
+
+# class Account(models.Model):
+#     login = models.CharField(max_length=20)
+#     password = models.CharField(max_length=20)
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+# создадим пользователя
+# sam = User.objects.create(name="Sam")
+#
+# # создадим аккаунт пользователя Sam
+# acc = Account.objects.create(login="1234", password="6565", user=sam)
+#
+# # изменяем имя пользователя
+# acc.user.name = "Bob"
+# # сохраняем изменения в бд
+# acc.user.save()
+
+# создадим пользователя
+# tom = User.objects.create(name="Tom")
+#
+# # создадим аккаунт пользователя
+# acc = Account(login="1234", password="6565")
+# tom.account = acc
+# tom.account.save()
+
+# обновляем данные
+# tom.account.login = "qwerty"
+# tom.account.password = "123456"
+# tom.account.save()
+
+
+class Users(models.Model):
+    name = models.CharField(max_length=20)
+
+
+class Account(models.Model):
+    login = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    user = models.OneToOneField(Users, on_delete=models.CASCADE, primary_key=True)
+#
+# # создадим пользователя
+# sam = Users.objects.create(name="Sam")
+#
+# # создадим аккаунт пользователя Sam
+# acc = Account.objects.create(login="1234", password="6565", user=sam)
+
+# создадим пользователя
+# bob = Users.objects.create(name="Bob")
+# Изменим его имя
+# bob = Users.objects.get(id=2)
+# bob.name = 'Tom'
+# bob.save()
+
+
